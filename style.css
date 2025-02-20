@@ -4,3 +4,83 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* 顏色變數 */
+  --calculator-border-color: #000;
+  --button-border-color: #000;
+
+  /* 尺寸 */
+  --calculator-width: 500px;
+  --calculator-padding: 30px;
+  --button-height: 60px;
+  --button-width: 100px;
+
+  /* 間距 */
+  --gap-size: 10px;
+
+  /* 邊框 */
+  --calculator-border-width: 5px;
+  --calculator-border-radius: 10px;
+  --button-border-width: 2px;
+  --border-radius: 5px;
+}
+
+.calculator {
+  padding: var(--calculator-padding);
+  width: var(--calculator-width);
+  border: var(--calculator-border-width) solid var(--calculator-border-color);
+  border-radius: var(--calculator-border-radius);
+  font-size: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  gap: var(--gap-size);
+  margin-top: 0.75rem;
+}
+.action {
+  display: flex;
+  gap: var(--gap-size);
+  margin-bottom: var(--gap-size);
+}
+
+.numbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-size);
+}
+
+.operators {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-size);
+}
+.buttons button {
+  width: var(--button-width);
+  height: var(--button-height);
+  border: var(--button-border-width) solid var(--button-border-color);
+  border-radius: var(--border-radius);
+}
+.reset {
+  flex: 2;
+}
+.zero-number {
+  flex: 3;
+}
+.output-text {
+  font-size: 2rem;
+  margin: 0px;
+  padding: 1rem;
+  text-align: end;
+  border: var(--button-border-width) solid var(--button-border-color);
+  border-radius: var(--border-radius);
+}
+.output-view {
+  position: relative;
+}
+.operator-view {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  font-weight: bold;
+}
