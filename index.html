@@ -12,7 +12,7 @@
     <div class="container">
       <div class="calculator">
         <div class="output-view">
-          <p class="output-text">0</p>
+          <p class="output-text"></p>
           <span class="operator-view">+</span>
         </div>
         <div class="buttons">
@@ -39,49 +39,11 @@
             <button class="operator"></button>
             <button class="operator"></button>
             <button class="operator"></button>
-            <button class="operator"></button>
+            <button class="equal">=</button>
           </div>
         </div>
       </div>
     </div>
-    <script>
-      const numberData = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0];
-      const operatorData = ["/", "*", "-", "+", "="];
-      const actionData = ["Reset", "Del"];
-      const numberBtns = Array.from(document.querySelectorAll(".number"));
-      const operatorBtns = Array.from(document.querySelectorAll(".operator"));
-      const actionBtns = Array.from(document.querySelectorAll(".action button"));
-      const outputText = document.querySelector(".output-text");
-      const operatorView = document.querySelector(".operator-view");
-
-      function handleNumberClick(e) {
-        console.log("Number:", e.target.innerText);
-      }
-
-      function handleOperatorClick(e) {
-        console.log("Operator:", e.target.innerText);
-      }
-
-      function handleActionClick(e) {
-        console.log("Action:", e.target.innerText);
-      }
-
-      numberBtns.forEach((btn, index) => {
-        btn.innerText = numberData[index];
-        btn.addEventListener("click", handleNumberClick);
-      });
-
-      operatorBtns.forEach((btn, index) => {
-        btn.innerText = operatorData[index];
-        btn.addEventListener("click", handleOperatorClick);
-      });
-
-      actionBtns.forEach((btn, index) => {
-        btn.innerText = actionData[index];
-        btn.addEventListener("click", handleActionClick);
-      });
-
-    
-    </script>
+    <script src="./app.js"></script>
   </body>
 </html>
