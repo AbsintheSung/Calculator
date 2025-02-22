@@ -30,6 +30,9 @@ const render = function () {
     outputText: (value) => {
       outputText.innerText = value;
     },
+    operatorView: (value) => {
+      operatorView.innerText = value;
+    }
   };
 };
 //使用者操作後 進行 資料判斷處理
@@ -54,6 +57,7 @@ const userInput = function () {
       viewNumber = calCurrentNumber;
     },
     operator: (arithmetic) => {
+      viewOperator = arithmetic
       if (ishandleEqual) {
         calStore = [calCurrentNumber];
         calStore.push(arithmetic);
@@ -188,6 +192,7 @@ function handleOperatorClick(e) {
   userInput().overFlow();
   userInput().operator(e.target.innerText);
   render().outputText(viewNumber);
+  render().operatorView(viewOperator);
 }
 
 function handleActionClick(e) {
@@ -196,6 +201,7 @@ function handleActionClick(e) {
   const temp = e.target.innerText;
   if (temp === "Reset") {
     userInput().reset();
+    render().operatorView(viewOperator);
   }
   if (temp === "Del") {
     userInput().del();
@@ -210,7 +216,9 @@ function handleEqualClick() {
     calCurrentNumber = calculator().result(calExpression); // 計算
     viewNumber = calCurrentNumber; // 更新當前數字
     render().outputText(viewNumber); // 更新畫面
+    render().operatorView('=');
   }
+
 }
 
 numberBtns.forEach((btn, index) => {
@@ -231,3 +239,4 @@ equalBtn.addEventListener("click", handleEqualClick);
 
 //開始時，初始畫面
 render().outputText(viewNumber);
+render().operatorView(viewOperator);
