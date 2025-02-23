@@ -77,7 +77,7 @@ const userInput = function () {
       }
       calCurrentNumber = "0";
       viewNumber = calCurrentNumber;
-      console.log("operator", calStore);
+      // console.log("operator", calStore);
     },
     equal: () => {
       // 如果沒有任何輸入，直接返回
@@ -116,12 +116,13 @@ const userInput = function () {
 
       // 4. 建立最終的計算表達式
       calExpression = calStore.join("");
-      console.log("equal", calStore);
-      console.log("calExpression", calExpression);
+      // console.log("equal", calStore);
+      // console.log("calExpression", calExpression);
     },
     reset: () => {
       // 重置所有計算相關變數
       viewNumber = "0";
+      viewOperator = ''
       calCurrentNumber = "0";
       calLastExpression = "";
       calExpression = "";
@@ -216,7 +217,7 @@ function handleEqualClick() {
     calCurrentNumber = calculator().result(calExpression); // 計算
     viewNumber = calCurrentNumber; // 更新當前數字
     render().outputText(viewNumber); // 更新畫面
-    render().operatorView('=');
+    render().operatorView('');
   }
 
 }
