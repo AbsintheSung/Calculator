@@ -77,7 +77,7 @@ const userInput = function () {
       }
       calCurrentNumber = "0";
       viewNumber = calCurrentNumber;
-      console.log("operator", calStore);
+      // console.log("operator", calStore);
     },
     equal: () => {
       // 如果沒有任何輸入，直接返回
@@ -116,8 +116,8 @@ const userInput = function () {
 
       // 4. 建立最終的計算表達式
       calExpression = calStore.join("");
-      console.log("equal", calStore);
-      console.log("calExpression", calExpression);
+      // console.log("equal", calStore);
+      // console.log("calExpression", calExpression);
     },
     reset: () => {
       // 重置所有計算相關變數
