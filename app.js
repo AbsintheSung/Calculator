@@ -122,6 +122,7 @@ const userInput = function () {
     reset: () => {
       // 重置所有計算相關變數
       viewNumber = "0";
+      viewOperator = ''
       calCurrentNumber = "0";
       calLastExpression = "";
       calExpression = "";
@@ -216,7 +217,7 @@ function handleEqualClick() {
     calCurrentNumber = calculator().result(calExpression); // 計算
     viewNumber = calCurrentNumber; // 更新當前數字
     render().outputText(viewNumber); // 更新畫面
-    render().operatorView('=');
+    render().operatorView('');
   }
 
 }
